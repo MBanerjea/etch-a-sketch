@@ -15,8 +15,8 @@ const divs = document.querySelectorAll('.group256');
 const vHeight = window.innerHeight;
 const vWidth = window.innerWidth;
 
-const attHeight = (vHeight - (input * 4)) / 16;
-const attWidth = (vWidth - (input * 4)) / 16;
+const attHeight = (vHeight - (input * 4)) / input;
+const attWidth = (vWidth - (input * 4)) / input;
 
 divs.forEach(div => {
   div.setAttribute('style', 'margin: 2px; background-color:violet;')
