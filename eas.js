@@ -1,13 +1,26 @@
 const mainContainer = document.querySelector('.main-container');
 
-for (let i = 0; i < 16; i++) {
+const input = 16;
+
+const grid = input ** 2;
+
+for (let i = 0; i < grid; i++) {
   let divs = mainContainer.appendChild(document.createElement('div'));
-  divs.classList.add('group16');
+  divs.classList.add('group256');
   divs.setAttribute('id', `n:${i}`);
 }
 
-const divs = document.querySelectorAll('.group16');
+const divs = document.querySelectorAll('.group256');
+
+const vHeight = window.innerHeight;
+const vWidth = window.innerWidth;
+
+const attHeight = (vHeight - (input * 4)) / 16;
+const attWidth = (vWidth - (input * 4)) / 16;
 
 divs.forEach(div => {
-  div.setAttribute('style', 'height:10px; width: 10px; background-color:violet;')
+  div.setAttribute('style', 'margin: 2px; background-color:violet;')
+  div.style.height = `${attHeight}px`;
+  div.style.width = `${attWidth}px`
 });
+
