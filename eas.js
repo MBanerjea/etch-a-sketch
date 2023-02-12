@@ -24,3 +24,9 @@ divs.forEach(div => {
   div.style.width = `${attWidth}px`
 });
 
+
+divs.forEach(div => {
+  div.addEventListener('mouseover', () => {
+    div.style.backgroundColor = "yellow";
+  })
+});
