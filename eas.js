@@ -15,7 +15,7 @@ button.setAttribute('style', 'margin: 10px auto; padding: 5px;');
 
 let boxes = 16;
 let grid = boxes ** 2;
-const vHeight = window.innerHeight;
+const vHeight = (window.innerHeight) - 46;
 const vWidth = window.innerWidth;
 
 let attHeight = (vHeight - (boxes * 4)) / boxes;
