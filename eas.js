@@ -13,13 +13,7 @@ button.addEventListener('click', reDraw);
 button.setAttribute('style', 'margin: 10px auto; padding: 5px;');
 
 
-// const divs = document.querySelectorAll('.group256');
 
-// divs.forEach(div => {
-//   div.addEventListener('mouseover', () => {
-//     div.style.backgroundColor = "yellow";
-//   })
-// });
 
 let boxes = 16;
 
@@ -42,6 +36,13 @@ function drawGrid(grid, attHeight, attWidth) {
     divs.style.height = `${attHeight}px`;
     divs.style.width = `${attWidth}px`
   };
+  const divs = document.querySelectorAll('.group256');
+
+  divs.forEach(div => {
+    div.addEventListener('mouseover', () => {
+      div.style.backgroundColor = "yellow";
+    })
+  });
 }
 
 function removeGrid() {
