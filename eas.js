@@ -10,19 +10,26 @@ button.textContent = "Enter the number of squares";
 
 button.addEventListener('click', reDraw);
 
+button.setAttribute('style', 'margin: 10px auto; padding: 5px;');
 
+
+// const divs = document.querySelectorAll('.group256');
+
+// divs.forEach(div => {
+//   div.addEventListener('mouseover', () => {
+//     div.style.backgroundColor = "yellow";
+//   })
+// });
 
 let boxes = 16;
 
 function promptMe() {
-  boxes = prompt("Enter the number of sides: ");
+  do {
+    boxes = prompt("Enter the number of sides: ");
+  } while (boxes > 100 || boxes < 1);
   return boxes;
 }
 
-button.setAttribute('style', 'margin: 10px auto; padding: 5px;');
-
-
-// const input = 16;
 
 let grid = boxes ** 2;
 
@@ -46,22 +53,12 @@ function removeGrid() {
 }
 
 
-// const divs = document.querySelectorAll('.group256');
 
 const vHeight = window.innerHeight;
 const vWidth = window.innerWidth;
 
 let attHeight = (vHeight - (boxes * 4)) / boxes;
 let attWidth = (vWidth - (boxes * 4)) / boxes;
-
-
-
-
-// divs.forEach(div => {
-//   div.addEventListener('mouseover', () => {
-//     div.style.backgroundColor = "yellow";
-//   })
-// });
 
 
 drawGrid(grid, attHeight, attWidth);
