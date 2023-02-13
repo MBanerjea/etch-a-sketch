@@ -13,9 +13,15 @@ button.addEventListener('click', reDraw);
 button.setAttribute('style', 'margin: 10px auto; padding: 5px;');
 
 
-
-
 let boxes = 16;
+let grid = boxes ** 2;
+const vHeight = window.innerHeight;
+const vWidth = window.innerWidth;
+
+let attHeight = (vHeight - (boxes * 4)) / boxes;
+let attWidth = (vWidth - (boxes * 4)) / boxes;
+
+drawGrid(grid, attHeight, attWidth);
 
 function promptMe() {
   do {
@@ -23,9 +29,6 @@ function promptMe() {
   } while (boxes > 100 || boxes < 1);
   return boxes;
 }
-
-
-let grid = boxes ** 2;
 
 function drawGrid(grid, attHeight, attWidth) {
   for (let i = 0; i < grid; i++) {
@@ -53,16 +56,6 @@ function removeGrid() {
   }
 }
 
-
-
-const vHeight = window.innerHeight;
-const vWidth = window.innerWidth;
-
-let attHeight = (vHeight - (boxes * 4)) / boxes;
-let attWidth = (vWidth - (boxes * 4)) / boxes;
-
-
-drawGrid(grid, attHeight, attWidth);
 
 function reDraw(grid) {
   promptMe();
