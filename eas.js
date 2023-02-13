@@ -22,11 +22,11 @@ function promptMe() {
 button.setAttribute('style', 'margin: 10px auto; padding: 5px;');
 
 
-const input = 16;
+// const input = 16;
 
 let grid = boxes ** 2;
 
-function drawGrid(grid) {
+function drawGrid(grid, attHeight, attWidth) {
   for (let i = 0; i < grid; i++) {
     let divs = mainContainer.appendChild(document.createElement('div'));
     divs.classList.add('group256');
@@ -51,8 +51,8 @@ function removeGrid() {
 const vHeight = window.innerHeight;
 const vWidth = window.innerWidth;
 
-const attHeight = (vHeight - (input * 4)) / input;
-const attWidth = (vWidth - (input * 4)) / input;
+let attHeight = (vHeight - (boxes * 4)) / boxes;
+let attWidth = (vWidth - (boxes * 4)) / boxes;
 
 
 
@@ -64,11 +64,13 @@ const attWidth = (vWidth - (input * 4)) / input;
 // });
 
 
-drawGrid(grid);
+drawGrid(grid, attHeight, attWidth);
 
 function reDraw(grid) {
   promptMe();
   removeGrid();
   grid = boxes ** 2;
-  drawGrid(grid);
+  let attHeight = (vHeight - (boxes * 4)) / boxes;
+  let attWidth = (vWidth - (boxes * 4)) / boxes;
+  drawGrid(grid, attHeight, attWidth);
 }
