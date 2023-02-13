@@ -10,7 +10,7 @@ button.textContent = "Enter the number of squares";
 
 button.addEventListener('click', reDraw);
 
-button.setAttribute('style', 'margin: 10px auto; padding: 5px;');
+button.setAttribute('style', 'margin: 10px auto; padding: 8px; border-radius: 10px; background-color: #f7e2dd;');
 
 
 let boxes = 16;
@@ -35,7 +35,7 @@ function drawGrid(grid, attHeight, attWidth) {
     let divs = mainContainer.appendChild(document.createElement('div'));
     divs.classList.add('group256');
     divs.setAttribute('id', `n:${i}`);
-    divs.setAttribute('style', 'margin: 2px; background-color:violet;')
+    divs.setAttribute('style', 'margin: 2px; background-color:#eeeeee;')
     divs.style.height = `${attHeight}px`;
     divs.style.width = `${attWidth}px`
   };
