@@ -50,7 +50,6 @@ function drawGrid(grid, attHeight, attWidth) {
 
 function removeGrid() {
   let grid = (document.querySelectorAll(".group256")).length;
-  alert(grid);
   for (let i = 0; i < grid; i++) {
     mainContainer.removeChild(document.querySelector(".group256"));
   }
