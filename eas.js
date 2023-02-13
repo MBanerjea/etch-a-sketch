@@ -41,9 +41,10 @@ function drawGrid(grid, attHeight, attWidth) {
   };
   const divs = document.querySelectorAll('.group256');
 
+
   divs.forEach(div => {
     div.addEventListener('mouseover', () => {
-      div.style.backgroundColor = "yellow";
+      div.style.backgroundColor = colorGenerator();
     })
   });
 }
@@ -53,6 +54,12 @@ function removeGrid() {
   for (let i = 0; i < grid; i++) {
     mainContainer.removeChild(document.querySelector(".group256"));
   }
+}
+
+function colorGenerator() {
+  let color = "#";
+  color += Math.random().toString(16).slice(2, 8);
+  return color;
 }
 
 
